@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Information Form</title>
+    </head>
+    <body>
+        <h2>Student Information Form</h2>
+        <form action="/StudentData" method="POST">
+            <label for="firstName">First Name:</label><br>
+            <input type="text" id="firstName" name="firstName"><br>
+            <label for="middleName">Middle Name:</label><br>
+            <input type="text" id="middleName" name="middleName"><br>
+            <label for="lastName">Last Name:</label><br>
+            <input type="text" id="lastName" name="lastName"><br>
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address"><br>
+            <label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <label for="description">Short Description:</label><br>
+            <textarea id="description" name="description"></textarea><br>
+            <input type="submit" value="Submit"><br>
+        </form>
+        <ul>
+            <% students.forEach(function(student) { %>
+                <li>
+                    <h2><%= student.firstName %> <%= student.middleName %> <%= student.lastName %></h2>
+                    <p>Address: <%= student.address %></p>
+                    <p>Phone: <%= student.phone %></p>
+                    <p>Email: <%= student.email %></p>
+                    <p>Description: <%= student.description %></p>
+                </li>
+            <% }); %>
+        </ul>
+
+        <a href="/StudentForm">Add New Student</a>
+    </body>
+</html>
