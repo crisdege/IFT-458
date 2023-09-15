@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <button id="asyncButton">Simulate Asynchronous Operations</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    const asyncButton = document.getElementById('asyncButton');
+    const result = document.getElementById('result');
+
+    asyncButton.addEventListener('click', async () => {
+        result.textContent='Loading...';
+        const response= await fetch('/simulateAsync');
+        const data = await response.json();
+        result.textContent = data.message;
+    })
+</script>

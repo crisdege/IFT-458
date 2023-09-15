@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <ul>
+        <% books.forEach(book => { %>
+            <li><%= book.title %> by <%= book.author %> (Published: <%= book.publicationYear %>)</li>
+        <% }); %>
+    </ul>
+    <form action="/addBook" method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="author" placeholder="Author" required>
+        <input type="text" name="publicationYear" placeholder="Publication Year" required>
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>

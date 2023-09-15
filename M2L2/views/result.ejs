@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/calculate" method="POST">
+        <input type="number" name="num1" placeholder="Enter first number" required>
+        <input type="number" name="num2" placeholder="Enter second number" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <p>
+        <h1>Calculation Results:</h1>
+        <p>Sum: <%= sum %></p>
+        <p>Difference: <%= difference %></p>
+        <p>Product: <%= product %></p>
+        <p>Quotient: <%= quotient %></p>
+    </p>
+</body>
+</html>
